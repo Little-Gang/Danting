@@ -1,0 +1,69 @@
+warning: LF will be replaced by CRLF in config/index.js.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/config/index.js b/config/index.js[m
+[1mindex f5d8863..9eb28e1 100644[m
+[1m--- a/config/index.js[m
+[1m+++ b/config/index.js[m
+[36m@@ -12,11 +12,7 @@[m [mmodule.exports = {[m
+     assetsPublicPath: '/',[m
+     proxyTable: {[m
+       '/api': {[m
+[31m-        target: 'http://37.220.51.216:8080/',[m
+[31m-        // target: 'http://37.220.83.114:8080/',[m
+[31m-        // target: 'http://37.220.51.218:8103/',[m
+[31m-        // target: 'http://37.220.82.225:8103/',[m
+[31m-        //  target: 'http://37.220.63.246:8103/',[m
+[32m+[m[32m        target: 'http://',//此处填写的是后端接口服务器的地址[m
+         changeOrigin: true,[m
+         pathRewrite: {[m
+           '^/api': '/'[m
+[1mdiff --git a/src/api/login-page.js b/src/api/login-page.js[m
+[1mindex 90526f2..639279f 100644[m
+[1m--- a/src/api/login-page.js[m
+[1m+++ b/src/api/login-page.js[m
+[36m@@ -1,22 +1,5 @@[m
+ import { http } from '../utils/index'[m
+[31m-//get请求[m
+[31m-// export function userLogin(data) {[m
+[31m-//     return http.get('LoginController/doRegister', {[m
+[31m-//         params: {[m
+[31m-//             userCode: data.userCode,[m
+[31m-//             password: data.password,[m
+[31m-//         }[m
+[31m-//     })[m
+[31m-// }[m
+[31m-//mock假数据[m
+[31m-// export function userLogin(data) {[m
+[31m-//   return http.get('loginmock', {[m
+[31m-//     params: {[m
+[31m-//       employeeNumber: data.employeeNumber,[m
+[31m-//       password: data.password,[m
+[31m-//     }[m
+[31m-//   })[m
+[31m-// }[m
+[32m+[m
+ //post请求 登录接口[m
+ export function userLogin(loginUserDTO) {[m
+     return http.post('LoginController/doRegister', loginUserDTO)[m
+[1mdiff --git a/src/api/personalInfo-page.js b/src/api/personalInfo-page.js[m
+[1mindex c292046..ca9bc3d 100644[m
+[1m--- a/src/api/personalInfo-page.js[m
+[1m+++ b/src/api/personalInfo-page.js[m
+[36m@@ -1,16 +1,5 @@[m
+ import { http } from '../utils/index'[m
+[31m-//get请求 修改用户信息接口[m
+[31m-// export function userChangeinfo(params) {[m
+[31m-//     return http.get('PersonalInfoManageController/updateUserInfo', {[m
+[31m-//         userCode: params.userCode,[m
+[31m-//         name:params.name,[m
+[31m-//         sex	:params.sex,[m
+[31m-//         age	:params.age,[m
+[31m-//         phone:params.phone,[m
+[31m-//         email:params.email,[m
+[31m-//         address:params.address[m
+[31m-//     })[m
+[31m-// }[m
+[32m+[m
+ //post请求 修改用户信息接口[m
+ export function userChangeinfo(Form) {[m
+     return http.post('PersonalInfoManageController/updateUserInfo', Form)[m
