@@ -1,16 +1,5 @@
 import { http } from '../utils/index'
-//get请求 修改用户信息接口
-// export function userChangeinfo(params) {
-//     return http.get('PersonalInfoManageController/updateUserInfo', {
-//         userCode: params.userCode,
-//         name:params.name,
-//         sex	:params.sex,
-//         age	:params.age,
-//         phone:params.phone,
-//         email:params.email,
-//         address:params.address
-//     })
-// }
+
 //post请求 修改用户信息接口
 export function userChangeinfo(Form) {
     return http.post('PersonalInfoManageController/updateUserInfo', Form)

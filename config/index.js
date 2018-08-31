@@ -12,11 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://37.220.51.216:8080/',
-        // target: 'http://37.220.83.114:8080/',
-        // target: 'http://37.220.51.218:8103/',
-        // target: 'http://37.220.82.225:8103/',
-        //  target: 'http://37.220.63.246:8103/',
+        target: 'http://',//此处填写的是后端接口服务器的地址
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'
